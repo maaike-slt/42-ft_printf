@@ -6,11 +6,30 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/08 18:41:41 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/08 19:02:29 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	ft_putstr(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	write(1, s, i);
+}
+
+static int	ft_convert(const char *input,size_t i, va_list args)
+{
+	if (input[i + 1] == 's')
+		ft_putstr(va_arg(args, char *));
+	else
+		write(1, "!", 1);
+	return (0);
+}
 
 static int	ft_input_iter(const char *input, va_list args)
 {
@@ -21,14 +40,11 @@ static int	ft_input_iter(const char *input, va_list args)
 	while (input[i] != '\0')
 	{
 		if (input[i] == '%')
-			write(1, "!", 1);
+			ft_convert(input, i, args);
 		else
 			write (1, &input[i], 1);
 		i++;
 	}
-	// loop char by char
-	// if char == '%' print hello
-	// else putchar the char
 	return (0);
 }
 
