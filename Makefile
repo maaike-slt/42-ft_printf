@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/08 19:03:40 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/09 22:08:55 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,13 @@ CFLAGS =	-Wall -Werror -Wextra
 CFLAGS +=	-g3
 # CFLAGS +=	-fsanitize=address
 # CFLAGS +=	-Wsuggest-attribute=const
+
+# **************************************************************************** #
+#	LIB		#
+
+LIBPATH =	./libft/
+LIBNAME =	$(LIBPATH)libft.a
+LIBINC =	-I$(LIBPATH)
 
 # **************************************************************************** #
 #	SOURCE		#
@@ -41,19 +48,26 @@ OBJ =		$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 #	RULES		#
 
 all:		$(NAME)
+	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ) $(LIBNAME)
 	$(AR) $(NAME) $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
+$(LIBNAME):
+	@printf "$(D)$(B)$(BLU)\n$(NAME) objects compiled\n\n$(D)"
+	@$(MAKE) -C $(LIBPATH)
+
 clean:
 	@$(RM) $(OBJ_PATH)
+	@$(MAKE) clean -C $(LIBPATH)
 
 fclean:		clean
 	@$(RM) $(NAME)
+	@$(MAKE) fclean -C $(LIBPATH)
 
 re:			fclean all
 
