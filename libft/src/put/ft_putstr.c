@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/10 22:04:33 by msloot           ###   ########.fr       */
+/*   Created: 2023/11/10 21:38:21 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/10 22:18:09 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-
-# include "../libft/inc/libft.h"
-
-#endif
+inline void	ft_putstr(const char *s)
+{
+	return (ft_putstr_fd(s, STDOUT_FILENO));
+}

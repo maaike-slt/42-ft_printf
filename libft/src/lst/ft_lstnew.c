@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:54:46 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/07 19:26:15 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/10 20:58:35 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*arr_lst;
 
-	arr_lst = (t_list *)malloc(sizeof(t_list) + 1);
+	arr_lst = (t_list *)malloc(sizeof(t_list));
 	if (!arr_lst)
 		return (NULL);
 	arr_lst->content = content;

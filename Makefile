@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/09 22:08:55 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/10 22:09:03 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,11 +51,15 @@ all:		$(NAME)
 	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
 
 $(NAME):	$(OBJ) $(LIBNAME)
+	@cp $(LIBNAME) $(NAME)
 	$(AR) $(NAME) $(OBJ)
+
+test:		all
+	$(CC) $(CFLAGS) -I$(INC) main.c $(NAME) && echo && ./a.out
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INC) $(LIBINC) -c $< -o $@
 
 $(LIBNAME):
 	@printf "$(D)$(B)$(BLU)\n$(NAME) objects compiled\n\n$(D)"
@@ -71,6 +75,6 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test
 
 # **************************************************************************** #

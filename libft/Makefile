@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/09 22:01:31 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/10 22:37:17 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ SRC_NAME = \
 	convert/ft_atoi.c convert/ft_itoa.c \
 	str/ft_strdup.c mem/ft_calloc.c \
 	str/ft_strjoin.c str/ft_substr.c str/ft_strtrim.c str/ft_split.c \
-	put/ft_putchar_fd.c put/ft_putstr_fd.c put/ft_putendl_fd.c put/ft_putnbr_fd.c \
+	put/ft_putchar_fd.c put/ft_putstr_fd.c put/ft_putstr.c put/ft_putendl_fd.c \
+	put/ft_putnbr_fd.c put/ft_putnbr.c \
 	str/ft_striteri.c str/ft_strmapi.c \
 	lst/ft_lstsize.c lst/ft_lstlast.c lst/ft_lstnew.c lst/ft_lstadd_front.c lst/ft_lstadd_back.c lst/ft_lstiter.c \
 	lst/ft_lstdelone.c lst/ft_lstclear.c lst/ft_lstmap.c \
