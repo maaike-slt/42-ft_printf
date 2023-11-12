@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:00:59 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/12 15:02:07 by msloot           ###   ########.fr       */
+/*   Created: 2023/10/27 16:42:56 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/12 16:22:03 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+inline void	ft_putchar(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == (unsigned char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (ft_putchar_fd(c, STDIN_FILENO));
 }
