@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:43:11 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/12 16:24:17 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/12 18:03:27 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@ int	ft_printf(const char *, ...);
 
 int	main(void)
 {
-	ft_printf("hello %d school %c am %s\n", 42, 'I', "msloot");
+	ft_printf("%c\t'a':\t%c\n", 'a');
+	ft_printf("%s\t\"yo\":\t%s\n", "yo");
+	ft_printf("%d %i\t42:\t%d\t%i\n", 42, 42);
+	ft_printf("%x %X\t42:\t%x\t%X\n", 42, 42);
 	return (0);
 }
