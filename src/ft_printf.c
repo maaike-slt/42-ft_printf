@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/13 16:45:16 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/13 17:06:39 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static int	ft_convert(const char *input, size_t i, va_list args)
 {
+	if (input[i + 1] == '\0')
+		return (0);
 	if (input[i + 1] == 's')
 		ft_putstr(va_arg(args, char *));
 	else if (input[i + 1] == 'i' || input[i + 1] == 'd')
