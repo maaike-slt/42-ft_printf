@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/12 17:55:33 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/13 16:45:16 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,13 @@ static int	ft_convert(const char *input, size_t i, va_list args)
 		ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 	else if (input[i + 1] == 'X')
 		ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF");
-	else
+	else if (input[i + 1] == '%')
 		write(1, "%", 1);
+	else
+	{
+		write(1, "%", 1);
+		write(1, &input[i + 1], 1);
+	}
 	return (0);
 }
 
@@ -40,7 +45,10 @@ static int	ft_input_iter(const char *input, va_list args)
 	while (input[i] != '\0')
 	{
 		if (input[i] == '%')
+		{
 			ft_convert(input, i, args);
+			i++;
+		}
 		else
 			write(1, &input[i], 1);
 		i++;
