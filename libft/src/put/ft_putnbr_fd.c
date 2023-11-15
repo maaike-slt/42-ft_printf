@@ -6,31 +6,41 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:19:22 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/10 22:33:16 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 13:18:23 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+static char	*n_cpy(char *dst, long n, size_t len)
 {
-	if (n == -2147483648)
+	dst[len] = '\0';
+	len--;
+	if (n == 0)
 	{
-		ft_putstr_fd("-2147483648", fd);
+		dst[0] = '0';
+		return (dst);
 	}
-	else if (n < 0)
+	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
 		n = -n;
-		ft_putnbr_fd(n, fd);
+		dst[0] = '-';
 	}
-	else if (n > 9)
+	while (n != 0)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
+		dst[len] = n % 10 + '0';
+		n /= 10;
+		len--;
 	}
-	else
-	{
-		ft_putchar_fd(n + '0', fd);
-	}
+	return (dst);
+}
+
+ssize_t	ft_putnbr_fd(int n, int fd)
+{
+	char	str[11];
+	size_t	len;
+
+	len = ft_intlen(n);
+	n_cpy(str, n, len);
+	return (ft_putstr_fd(str, fd));
 }

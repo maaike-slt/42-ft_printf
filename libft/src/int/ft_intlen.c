@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:42:56 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 12:04:30 by msloot           ###   ########.fr       */
+/*   Created: 2023/11/15 12:29:36 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/15 13:27:12 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline ssize_t	ft_putchar_fd(char c, int fd)
+size_t	ft_intlen(int n)
 {
-	return (write(fd, &c, 1));
+	size_t	i;
+
+	if (n == 0)
+		return (1);
+	i = 0;
+	if (n < 0)
+		i++;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }

@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_is_in_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:42:56 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 12:04:30 by msloot           ###   ########.fr       */
+/*   Created: 2023/11/13 17:19:25 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/15 12:10:26 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline ssize_t	ft_putchar_fd(char c, int fd)
+bool	ft_is_in(const char *str, char c)
 {
-	return (write(fd, &c, 1));
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			return (true);
+		i++;
+	}
+	return (false);
 }

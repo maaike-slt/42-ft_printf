@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/12 17:47:48 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 13:22:09 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+bool	ft_is_in(const char *str, char c);
 
 void	ft_bzero(void *s, size_t n);
 char	*ft_strchr(const char *s, int c);
@@ -37,6 +38,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+size_t	ft_intlen(int n);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -55,13 +58,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putstr_fd(const char *s, int fd);
-void	ft_putstr(const char *s);
-void	ft_putendl_fd(const char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
+ssize_t	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putchar(char c);
+ssize_t	ft_putstr_fd(const char *s, int fd);
+ssize_t	ft_putstr(const char *s);
+ssize_t	ft_putendl_fd(const char *s, int fd);
+ssize_t	ft_putnbr_fd(int n, int fd);
+ssize_t	ft_putnbr(int n);
 void	ft_putnbr_base(int n, const char *base);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));

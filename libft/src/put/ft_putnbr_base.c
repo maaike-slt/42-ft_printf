@@ -6,26 +6,11 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:55:10 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/12 17:47:39 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 13:18:09 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static bool	is_c_in_str(const char *str, char c)
-{
-	// TODO: add a similar function in libft
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == c)
-			return (true);
-		i++;
-	}
-	return (false);
-}
 
 static bool	is_valid_base(const char *base)
 {
@@ -38,7 +23,7 @@ static bool	is_valid_base(const char *base)
 	i = 0;
 	while (base[i] != '\0')
 	{
-		if (i + 1 < len && is_c_in_str(base + i + 1, base[i]))
+		if (i + 1 < len && ft_is_in(base + i + 1, base[i]))
 			return (false);
 		if (base[i] == '-' || base[i] == '+')
 			return (false);

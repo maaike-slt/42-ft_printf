@@ -6,13 +6,13 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:38:21 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/10 22:18:09 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 13:20:11 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_putstr(const char *s)
+inline ssize_t	ft_putstr(const char *s)
 {
 	return (ft_putstr_fd(s, STDOUT_FILENO));
 }
