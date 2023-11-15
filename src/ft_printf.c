@@ -6,41 +6,54 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/13 17:06:39 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 14:00:47 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_convert(const char *input, size_t i, va_list args)
+static ssize_t	ft_raw(const char *input, size_t i)
+{
+	ssize_t	ret1;
+	ssize_t	ret2;
+
+	ret1 = ft_putchar('%');
+	if (ret1 < 0)
+		return (ret1);
+	ret2 = ft_putchar(input[i + 1]);
+	if (ret2 < 0)
+		return (ret2);
+	return (ret1 + ret2);
+}
+
+static ssize_t	ft_convert(const char *input, size_t i, va_list args)
 {
 	if (input[i + 1] == '\0')
 		return (0);
 	if (input[i + 1] == 's')
-		ft_putstr(va_arg(args, char *));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (input[i + 1] == 'i' || input[i + 1] == 'd')
-		ft_putnbr(va_arg(args, int));
+		return (ft_putnbr(va_arg(args, int)));
 	else if (input[i + 1] == 'u')
-		ft_putnbr(va_arg(args, unsigned int));
+		return (ft_putnbr(va_arg(args, unsigned int)));
 	else if (input[i + 1] == 'c')
-		ft_putchar(va_arg(args, int));
+		return (ft_putchar(va_arg(args, int)));
 	else if (input[i + 1] == 'x')
-		ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
+		return (ft_putnbr_base(va_arg(args, int), "0123456789abcdef"));
 	else if (input[i + 1] == 'X')
-		ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF");
+		return (ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF"));
 	else if (input[i + 1] == '%')
-		write(1, "%", 1);
+		return (ft_putchar('%'));
 	else
-	{
-		write(1, "%", 1);
-		write(1, &input[i + 1], 1);
-	}
-	return (0);
+		return (ft_raw(input, i));
+
 }
 
-static int	ft_input_iter(const char *input, va_list args)
+static ssize_t	ft_input_iter(const char *input, va_list args)
 {
 	size_t	i;
+	ssize_t	ret;
+	ssize_t	current;
 
 	(void)args;
 	i = 0;
@@ -48,14 +61,22 @@ static int	ft_input_iter(const char *input, va_list args)
 	{
 		if (input[i] == '%')
 		{
-			ft_convert(input, i, args);
+			current = ft_convert(input, i, args);
+			if (current < 0)
+				return (current);
+			ret += current;
 			i++;
 		}
 		else
-			write(1, &input[i], 1);
+		{
+			current = write(1, &input[i], 1);
+			if (current < 0)
+				return (current);
+			ret += current;
+		}
 		i++;
 	}
-	return (0);
+	return (ret);
 }
 
 int	ft_printf(const char *input, ...)
