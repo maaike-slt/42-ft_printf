@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/15 13:21:58 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/15 18:22:21 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,11 @@ SRC_NAME = \
 	ft_is/ft_isalpha.c ft_is/ft_isdigit.c ft_is/ft_isalnum.c ft_is/ft_isascii.c ft_is/ft_isprint.c ft_is/ft_is_in.c \
 	str/ft_strlen.c str/ft_strchr.c str/ft_strrchr.c str/ft_strncmp.c str/ft_strlcpy.c str/ft_strlcat.c str/ft_strnstr.c \
 	str/ft_toupper.c str/ft_tolower.c \
-	int/ft_intlen.c \
+	int/ft_intlen.c int/ft_intlen_base.c \
 	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c \
 	convert/ft_atoi.c convert/ft_itoa.c \
+	convert/ft_intcpy.c convert/ft_intcpy_base.c \
+	convert/ft_check_base.c \
 	str/ft_strdup.c mem/ft_calloc.c \
 	str/ft_strjoin.c str/ft_substr.c str/ft_strtrim.c str/ft_split.c \
 	put/ft_putchar_fd.c put/ft_putchar.c put/ft_putstr_fd.c put/ft_putstr.c put/ft_putendl_fd.c \

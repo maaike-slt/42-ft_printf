@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 14:00:47 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 18:17:34 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static ssize_t	ft_convert(const char *input, size_t i, va_list args)
 		return (ft_putchar('%'));
 	else
 		return (ft_raw(input, i));
-
 }
 
 static ssize_t	ft_input_iter(const char *input, va_list args)
