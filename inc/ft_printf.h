@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/10 22:04:33 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 18:29:54 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@
 # include <stdarg.h>
 
 # include "../libft/inc/libft.h"
+
+int	ft_printf(const char *input, ...);
 
 #endif

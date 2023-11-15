@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 18:17:34 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/15 18:28:52 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static ssize_t	ft_input_iter(const char *input, va_list args)
 	ssize_t	ret;
 	ssize_t	current;
 
-	(void)args;
+	ret = 0;
 	i = 0;
 	while (input[i] != '\0')
 	{
