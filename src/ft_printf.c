@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 18:28:52 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/16 16:27:07 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static ssize_t	ft_input_iter(const char *input, va_list args)
 		}
 		else
 		{
-			current = write(1, &input[i], 1);
+			current = write(1, &input[i], 1); //Why not putchar?
 			if (current < 0)
 				return (current);
 			ret += current;
