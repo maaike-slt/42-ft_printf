@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:56 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 12:04:15 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:38:35 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 inline ssize_t	ft_putchar(char c)
 {
-	return (ft_putchar_fd(c, STDIN_FILENO));
+	return (ft_putchar_fd(c, STDOUT_FILENO));
 }
