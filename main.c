@@ -6,18 +6,18 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:09:08 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/13 17:09:10 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:16:53 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *input, ...);
 
 int	main(void)
 {
 	ft_printf("%c\t%s\t%d\t%x\t%X\t%%\t%z\n", 'a', "Hello", 42, 42, 42);
-	ft_printf("%c\t\n", 'a');
-	ft_printf("%s\t\n", "Hello %");
-	ft_printf("%d %i\t\n", 42, 42);
-	ft_printf("%x %X\t\n", 42, 42);
+	ft_printf("%c\n", 'a');
+	ft_printf("%s\n", "Hello %");
+	ft_printf("%d %i\n", 42, 42);
+	ft_printf("%x %X\n", 42, 42);
 	return (0);
 }
