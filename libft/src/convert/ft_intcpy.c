@@ -6,13 +6,13 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:12:40 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 17:12:42 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:45:48 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline char	*ft_intcpy(char *dst, long n)
+inline char	*ft_intcpy(char *dst, ssize_t n)
 {
 	return (ft_intcpy_base(dst, n, "0123456789", 10));
 }

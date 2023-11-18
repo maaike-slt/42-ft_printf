@@ -6,13 +6,13 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:19:22 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:10:02 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:45:46 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-ssize_t	ft_putnbr_fd(long n, int fd)
+ssize_t	ft_putnbr_fd(ssize_t n, int fd)
 {
 	char	str[12];
 

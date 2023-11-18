@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:16:08 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:56:04 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,24 @@ static ssize_t	ft_raw(const char *input, size_t i)
 	if (ret1 < 0)
 		return (ret1);
 	ret2 = ft_putchar(input[i + 1]);
+	if (ret2 < 0)
+		return (ret2);
+	return (ret1 + ret2);
+}
+
+static ssize_t	ft_convert_p(va_list args)
+{
+	size_t	p;
+	ssize_t	ret1;
+	ssize_t	ret2;
+
+	p = va_arg(args, size_t);
+	if (p == 0)
+		return (ft_putstr("(nil)"));
+	ret1 = ft_putstr("0x");
+	if (ret1 < 0)
+		return (ret1);
+	ret2 = ft_putnbr_base(p, "0123456789abcdef");
 	if (ret2 < 0)
 		return (ret2);
 	return (ret1 + ret2);
@@ -42,6 +60,8 @@ static ssize_t	ft_convert(const char *input, size_t i, va_list args)
 		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef"));
 	else if (input[i + 1] == 'X')
 		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF"));
+	else if (input[i + 1] == 'p')
+		return (ft_convert_p(args));
 	else if (input[i + 1] == '%')
 		return (ft_putchar('%'));
 	else

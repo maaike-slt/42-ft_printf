@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:10:20 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:04:00 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:45:49 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // no check over base matching base_len for optimization reasons
 // the base_len is not needed if we calculate it inside the function using -
 // ft_intlen_base, but all len calculation should be optimized
-char	*ft_intcpy_base(char *dst, long n, const char *base, size_t base_len)
+char	*ft_intcpy_base(char *dst, ssize_t n, const char *base, size_t base_len)
 {
 	size_t	len;
 

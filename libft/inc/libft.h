@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:11:30 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:45:50 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-size_t	ft_intlen(long n);
-size_t	ft_intlen_base(long n, size_t base);
+size_t	ft_intlen(ssize_t n);
+size_t	ft_intlen_base(ssize_t n, size_t base);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -50,8 +50,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
-char	*ft_intcpy(char *dst, long n);
-char	*ft_intcpy_base(char *dst, long n, const char *base, size_t base_len);
+char	*ft_intcpy(char *dst, ssize_t n);
+char	*ft_intcpy_base(char *dst, ssize_t n, const char *base, size_t base_len);
 size_t	ft_check_base(const char *base);
 
 char	*ft_strdup(const char *s);
@@ -67,9 +67,9 @@ ssize_t	ft_putchar(char c);
 ssize_t	ft_putstr_fd(const char *s, int fd);
 ssize_t	ft_putstr(const char *s);
 ssize_t	ft_putendl_fd(const char *s, int fd);
-ssize_t	ft_putnbr_fd(long n, int fd);
-ssize_t	ft_putnbr(long n);
-ssize_t	ft_putnbr_base(long n, const char *base);
+ssize_t	ft_putnbr_fd(ssize_t n, int fd);
+ssize_t	ft_putnbr(ssize_t n);
+ssize_t	ft_putnbr_base(ssize_t n, const char *base);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
