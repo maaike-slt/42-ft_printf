@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:19:22 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 18:13:55 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:12:29 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ssize_t	ft_putnbr_fd(int n, int fd)
 {
-	char	str[11];
+	char	str[12];
 
 	ft_intcpy(str, n);
 	return (ft_putstr_fd(str, fd));
