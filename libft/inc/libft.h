@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 17:52:31 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:11:30 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ ssize_t	ft_putchar(char c);
 ssize_t	ft_putstr_fd(const char *s, int fd);
 ssize_t	ft_putstr(const char *s);
 ssize_t	ft_putendl_fd(const char *s, int fd);
-ssize_t	ft_putnbr_fd(int n, int fd);
-ssize_t	ft_putnbr(int n);
-ssize_t	ft_putnbr_base(int n, const char *base);
+ssize_t	ft_putnbr_fd(long n, int fd);
+ssize_t	ft_putnbr(long n);
+ssize_t	ft_putnbr_base(long n, const char *base);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
