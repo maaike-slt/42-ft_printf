@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 17:15:36 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:16:08 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static ssize_t	ft_convert(const char *input, size_t i, va_list args)
 	else if (input[i + 1] == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	else if (input[i + 1] == 'x')
-		return (ft_putnbr_base(va_arg(args, int), "0123456789abcdef"));
+		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef"));
 	else if (input[i + 1] == 'X')
-		return (ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF"));
+		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (input[i + 1] == '%')
 		return (ft_putchar('%'));
 	else
