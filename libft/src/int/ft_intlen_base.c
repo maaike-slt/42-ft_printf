@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 17:47:00 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 18:22:43 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:56:18 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // will crash if base is 0 which is not protected for optimization reasons
 // it is the responsibility of the dev to use ft_check_base() != 0 beforehand
-size_t	ft_intlen_base(int n, size_t base)
+size_t	ft_intlen_base(long n, size_t base)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ size_t	ft_intlen_base(int n, size_t base)
 		i++;
 	while (n != 0)
 	{
-		n /= base;
+		n /= (long)base;
 		i++;
 	}
 	return (i);

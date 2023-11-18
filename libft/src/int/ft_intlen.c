@@ -6,25 +6,13 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:29:36 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 13:27:12 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:51:58 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_intlen(int n)
+size_t	ft_intlen(long n)
 {
-	size_t	i;
-
-	if (n == 0)
-		return (1);
-	i = 0;
-	if (n < 0)
-		i++;
-	while (n != 0)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
+	return (ft_intlen_base(n, 10));
 }

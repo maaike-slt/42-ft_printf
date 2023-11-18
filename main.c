@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:09:08 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 17:34:54 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 18:04:22 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	main(void)
 	// ft_printf("%s\n", "Hello %");
 	// ft_printf("%d %i\n", 42, 42);
 	// ft_printf("%x %X\n", 42, 42);
-	ft_printf("1, 2, 3, -d test, testing, 0.4s sound, 1, 2, 3xp, sound, -*dtest");
+	ft_printf("%d\n", ft_printf("%d", 0));
 	return (0);
 }

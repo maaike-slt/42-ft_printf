@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/15 18:24:27 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:52:31 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-size_t	ft_intlen(int n);
-size_t	ft_intlen_base(int n, size_t base);
+size_t	ft_intlen(long n);
+size_t	ft_intlen_base(long n, size_t base);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
