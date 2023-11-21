@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/21 20:29:13 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/21 20:37:46 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,11 @@ OBJ =		$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 #	RULES		#
 
 all:		$(NAME)
-	@printf "\n$(NAME) compiled\n"
 
 $(NAME):	$(OBJ) $(LIBNAME)
 	@cp $(LIBNAME) $(NAME)
 	$(AR) $(NAME) $(OBJ)
+	@printf "\n$(NAME) compiled\n"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@)
