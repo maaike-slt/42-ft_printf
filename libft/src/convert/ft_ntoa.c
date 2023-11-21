@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_ntoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 12:29:36 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 19:01:24 by msloot           ###   ########.fr       */
+/*   Created: 2023/11/20 21:27:41 by adelille          #+#    #+#             */
+/*   Updated: 2023/11/20 21:55:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline size_t	ft_intlen(ssize_t n)
+char	*ft_ntoa(ssize_t n)
 {
-	return (ft_intlen_base(n, 10));
+	return (ft_ntoa_base(n, &(t_base){B10, B10_LEN}));
 }

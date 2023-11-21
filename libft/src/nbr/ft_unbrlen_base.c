@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_uintlen_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 10:55:10 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/20 21:46:44 by adelille         ###   ########.fr       */
+/*   Created: 2023/11/15 17:47:00 by msloot            #+#    #+#             */
+/*   Updated: 2023/11/19 19:17:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline ssize_t	ft_putnbr_base(ssize_t n, const t_base *b)
+// will crash if base is 0 which is not protected for optimization reasons
+// it is the responsibility of the dev to use ft_check_base() != 0 beforehand
+size_t	ft_unbrlen_base(size_t n, size_t base)
 {
-	return (ft_putnbr_base_fd(n, b, STDOUT_FILENO));
+	size_t	i;
+
+	if (n == 0)
+		return (1);
+	i = 0;
+	while (n != 0)
+	{
+		n /= base;
+		i++;
+	}
+	return (i);
 }

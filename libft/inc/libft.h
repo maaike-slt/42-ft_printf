@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/18 18:45:50 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/20 22:03:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-size_t	ft_intlen(ssize_t n);
-size_t	ft_intlen_base(ssize_t n, size_t base);
+size_t	ft_nbrlen_base(ssize_t n, size_t base);
+size_t	ft_unbrlen_base(size_t n, size_t base);
+size_t	ft_nbrlen(ssize_t n);
+size_t	ft_unbrlen(size_t n);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -48,10 +50,45 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
+typedef struct s_base {
+	const char	*base;
+	size_t		len;
+}	t_base;
+
+# define B2			"01"
+# define B2_LEN		2
+# define B8			"01234567"
+# define B8_LEN		8
+# define B10		"0123456789"
+# define B10_LEN	10
+# define B16		"0123456789abcdef"
+# define B16_LEN	16
+# define B16X		"0123456789ABCDEF"
+# define B16X_LEN	16
+
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
-char	*ft_intcpy(char *dst, ssize_t n);
-char	*ft_intcpy_base(char *dst, ssize_t n, const char *base, size_t base_len);
+
+char	*ft_ntoa_base(ssize_t n, const t_base *b);
+char	*ft_untoa_base(size_t n, const t_base *b);
+char	*ft_ntoa(ssize_t n);
+char	*ft_untoa(size_t n);
+
+char	*ft_nbr_convert_base(
+			char *dst,
+			ssize_t n,
+			size_t n_len,
+			const t_base *b
+			);
+char	*ft_unbr_convert_base(
+			char *dst,
+			size_t n,
+			size_t n_len,
+			const t_base *b
+			);
+char	*ft_nbr_convert(char *dst, ssize_t n, size_t n_len);
+char	*ft_unbr_convert(char *dst, size_t n, size_t n_len);
+
 size_t	ft_check_base(const char *base);
 
 char	*ft_strdup(const char *s);
@@ -67,9 +104,16 @@ ssize_t	ft_putchar(char c);
 ssize_t	ft_putstr_fd(const char *s, int fd);
 ssize_t	ft_putstr(const char *s);
 ssize_t	ft_putendl_fd(const char *s, int fd);
+
+ssize_t	ft_putnbr_base_fd(ssize_t n, const t_base *base, int fd);
+ssize_t	ft_putnbr_base(ssize_t n, const t_base *base);
 ssize_t	ft_putnbr_fd(ssize_t n, int fd);
 ssize_t	ft_putnbr(ssize_t n);
-ssize_t	ft_putnbr_base(ssize_t n, const char *base);
+
+ssize_t	ft_putunbr_base_fd(size_t n, const t_base *base, int fd);
+ssize_t	ft_putunbr_base(size_t n, const t_base *base);
+ssize_t	ft_putunbr_fd(size_t n, int fd);
+ssize_t	ft_putunbr(size_t n);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

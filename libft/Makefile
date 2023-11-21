@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
+#    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/15 18:22:21 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/20 22:04:48 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,21 @@ SRC_NAME = \
 	ft_is/ft_isalpha.c ft_is/ft_isdigit.c ft_is/ft_isalnum.c ft_is/ft_isascii.c ft_is/ft_isprint.c ft_is/ft_is_in.c \
 	str/ft_strlen.c str/ft_strchr.c str/ft_strrchr.c str/ft_strncmp.c str/ft_strlcpy.c str/ft_strlcat.c str/ft_strnstr.c \
 	str/ft_toupper.c str/ft_tolower.c \
-	int/ft_intlen.c int/ft_intlen_base.c \
+	nbr/ft_nbrlen.c nbr/ft_nbrlen_base.c \
 	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c \
 	convert/ft_atoi.c convert/ft_itoa.c \
-	convert/ft_intcpy.c convert/ft_intcpy_base.c \
+	convert/ft_ntoa_base.c convert/ft_ntoa.c \
+	convert/ft_untoa_base.c convert/ft_untoa.c \
+	convert/ft_nbr_convert_base.c convert/ft_nbr_convert.c \
+	convert/ft_unbr_convert_base.c convert/ft_unbr_convert.c \
 	convert/ft_check_base.c \
 	str/ft_strdup.c mem/ft_calloc.c \
 	str/ft_strjoin.c str/ft_substr.c str/ft_strtrim.c str/ft_split.c \
 	put/ft_putchar_fd.c put/ft_putchar.c put/ft_putstr_fd.c put/ft_putstr.c put/ft_putendl_fd.c \
-	put/ft_putnbr_fd.c put/ft_putnbr.c put/ft_putnbr_base.c \
+	put/ft_putnbr_base_fd.c put/ft_putnbr_base.c \
+	put/ft_putnbr_fd.c put/ft_putnbr.c \
+	put/ft_putunbr_base_fd.c put/ft_putunbr_base.c \
+	put/ft_putunbr_fd.c put/ft_putunbr.c \
 	str/ft_striteri.c str/ft_strmapi.c \
 	lst/ft_lstsize.c lst/ft_lstlast.c lst/ft_lstnew.c lst/ft_lstadd_front.c lst/ft_lstadd_back.c lst/ft_lstiter.c \
 	lst/ft_lstdelone.c lst/ft_lstclear.c lst/ft_lstmap.c \
