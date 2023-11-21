@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
+/*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/20 22:03:21 by adelille         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:56:37 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,8 @@ typedef struct s_base {
 # define B10		"0123456789"
 # define B10_LEN	10
 # define B16		"0123456789abcdef"
-# define B16_LEN	16
 # define B16X		"0123456789ABCDEF"
-# define B16X_LEN	16
+# define B16_LEN	16
 
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
