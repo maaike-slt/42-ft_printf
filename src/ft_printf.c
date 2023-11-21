@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/21 20:02:31 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/21 20:05:08 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static ssize_t	ft_convert_p(va_list args)
 	ret1 = ft_putstr("0x");
 	if (ret1 < 0)
 		return (ret1);
-	ret2 = ft_putnbr_base(p, &(t_base){B16, B16_LEN});
+	ret2 = ft_putunbr_base(p, &(t_base){B16, B16_LEN});
 	if (ret2 < 0)
 		return (ret2);
 	return (ret1 + ret2);
