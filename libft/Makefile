@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2023/11/21 19:57:40 by msloot           ###   ########.fr        #
+#    Updated: 2023/11/21 20:07:22 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ SRC_NAME = \
 	str/ft_strlen.c str/ft_strchr.c str/ft_strrchr.c str/ft_strncmp.c str/ft_strlcpy.c str/ft_strlcat.c str/ft_strnstr.c \
 	str/ft_toupper.c str/ft_tolower.c \
 	nbr/ft_nbrlen.c nbr/ft_nbrlen_base.c \
+	nbr/ft_unbrlen.c nbr/ft_unbrlen_base.c \
 	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c \
 	convert/ft_atoi.c convert/ft_itoa.c \
 	convert/ft_ntoa_base.c convert/ft_ntoa.c \
