@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:06:28 by msloot            #+#    #+#             */
-/*   Updated: 2023/11/21 20:05:08 by msloot           ###   ########.fr       */
+/*   Updated: 2023/11/22 20:28:07 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static ssize_t	ft_convert_p(va_list args)
 static ssize_t	ft_convert(const char *input, size_t i, va_list args)
 {
 	if (input[i + 1] == '\0')
-		return (0);
+		return (-1);
 	if (input[i + 1] == 's')
 		return (ft_putstr(va_arg(args, char *)));
 	else if (input[i + 1] == 'i' || input[i + 1] == 'd')
@@ -100,6 +100,8 @@ int	ft_printf(const char *input, ...)
 	va_list	args;
 	int		ret;
 
+	if (!input)
+		return (-1);
 	va_start(args, input);
 	ret = ft_input_iter(input, args);
 	va_end(args);
